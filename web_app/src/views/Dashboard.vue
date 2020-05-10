@@ -138,7 +138,7 @@ export default {
     articles: []
   }),
   created() {
-    fetch("http://localhost:8087/articles/?limit=10")
+    fetch("http://kbase-nlb-c4b8ccc3f9b975ec.elb.eu-west-1.amazonaws.com/articles/?limit=10")
       .then(res => res.json())
       .then(response => {
         this.articles = response;
@@ -157,7 +157,7 @@ export default {
       //          "value": score
       //        }
       axios
-        .post("http://localhost:8087/user_ratings/", {
+        .post("http://kbase-nlb-c4b8ccc3f9b975ec.elb.eu-west-1.amazonaws.com/user_ratings/", {
           //.post("http://localhost:8087/users/" + user_id + "/user_ratings/" + article_id, {
           value: score,
           article_id: article,
